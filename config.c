@@ -497,6 +497,7 @@ cSetup::cSetup(void)
   ChannelsWrap = 0;
   ShowChannelNamesWithSource = 0;
   EmergencyExit = 1;
+  EPGScanType = 0;
 }
 
 cSetup& cSetup::operator= (const cSetup &s)
@@ -725,6 +726,7 @@ bool cSetup::Parse(const char *Name, const char *Value)
   else if (!strcasecmp(Name, "ChannelsWrap"))        ChannelsWrap       = atoi(Value);
   else if (!strcasecmp(Name, "ShowChannelNamesWithSource")) ShowChannelNamesWithSource = atoi(Value);
   else if (!strcasecmp(Name, "EmergencyExit"))       EmergencyExit      = atoi(Value);
+  else if (!strcasecmp(Name, "EPGScanType"))         EPGScanType        = atoi(Value);
   else if (!strcasecmp(Name, "LastReplayed"))        cReplayControl::SetRecording(Value);
   else
      return false;
@@ -857,6 +859,7 @@ bool cSetup::Save(void)
   Store("ChannelsWrap",       ChannelsWrap);
   Store("ShowChannelNamesWithSource", ShowChannelNamesWithSource);
   Store("EmergencyExit",      EmergencyExit);
+  Store("EPGScanType",        EPGScanType);
   Store("LastReplayed",       cReplayControl::LastReplayed());
 
   Sort();

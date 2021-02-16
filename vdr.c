@@ -785,6 +785,8 @@ int main(int argc, char *argv[])
   Folders.Load(AddDirectory(ConfigDirectory, "folders.conf"));
   CamResponsesLoad(AddDirectory(ConfigDirectory, "camresponses.conf"), true);
 
+  isyslog("EPG scan type: %i", Setup.EPGScanType);
+
   if (!*cFont::GetFontFileName(Setup.FontOsd)) {
      const char *msg = "no fonts available - OSD will not show any text!";
      fprintf(stderr, "vdr: %s\n", msg);
