@@ -176,6 +176,10 @@ void cEITScanner::Process(void)
                          }
                       }
                   }
+                  if(Setup.EPGScanType == 1) // use first device for EIT scan if device is idle
+                     break;
+                  else if(Setup.EPGScanType == 2 && AnyDeviceSwitched) // use first idle device for EIT scan
+                     break;
                }
            if (!AnyDeviceSwitched) {
               delete scanList;
