@@ -27,6 +27,7 @@ extern "C" {
 #include <utime.h>
 #include "i18n.h"
 #include "thread.h"
+#include <limits.h>
 
 int SysLogLevel = 3;
 

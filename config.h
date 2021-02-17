@@ -19,6 +19,7 @@
 #include "i18n.h"
 #include "font.h"
 #include "tools.h"
+#include <limits.h>
 
 // VDR's own version number:
 
